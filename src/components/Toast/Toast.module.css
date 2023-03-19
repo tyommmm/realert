@@ -2,7 +2,7 @@
   position: absolute;
   display: flex;
   bottom: 0;
-  left: "30px";
+  left: '30px';
   min-width: 350px;
   min-height: 80px;
   border-radius: 8px;
@@ -35,13 +35,13 @@
   font-weight: 900;
 }
 
-.toastHeader {
+.toastHeading {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.toastText {
+.toastHeading {
   color: gray;
   font-size: 15px;
 }

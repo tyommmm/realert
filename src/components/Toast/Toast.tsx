@@ -1,16 +1,15 @@
-import React, { FC } from "react";
-import useStatusDetector from "../../hooks/useStatusDetector";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./Toast.module.css";
+import React, { FC } from 'react';
+import useStatusDetector from '../../hooks/useStatusDetector';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './Toast.module.css';
 
 export interface ToastProps {
-  title: string;
-  status: "success" | "error" | "info" | "warning";
-  text: string;
+  heading: string;
+  message: string;
+  status: 'success' | 'error' | 'info' | 'warning';
 }
 
-const Toast: FC<ToastProps> = ({ title, text, status }, ...props) => {
+const Toast: FC<ToastProps> = ({ heading, message, status }, ...props) => {
   const { color, icon } = useStatusDetector(status);
 
   return (
@@ -21,8 +20,8 @@ const Toast: FC<ToastProps> = ({ title, text, status }, ...props) => {
           <FontAwesomeIcon fontSize="30px" icon={icon} />
         </div>
         <div className={styles.toastInfo}>
-          <div className={styles.toastHeader}>{title}</div>
-          <div className={styles.toastText}>{text}</div>
+          <div className={styles.toastHeading}>{heading}</div>
+          <div className={styles.toastMessage}>{message}</div>
         </div>
       </div>
     </div>
