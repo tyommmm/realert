@@ -32,7 +32,7 @@
 
 .data {
   margin-top: 50px;
-  gap: 15px;
+  gap: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -50,12 +50,12 @@
   font-weight: 900;
 }
 .icon svg {
-  width: 45px;
-  height: 45px;
+  font-size: 45px;
 }
 .heading {
+  margin-top: 5px;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .message {
@@ -78,4 +78,11 @@
   height: 30px;
   align-self: flex-end;
   margin: 0 20px 20px 0;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  outline: 2px solid #1ea7fd;
+  outline-offset: 1px;
+}
+.actions button:hover {
+  background-color: #1ea8fde8;
 }
