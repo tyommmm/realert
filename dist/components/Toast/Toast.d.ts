@@ -1,10 +1,10 @@
-import { FC } from "react";
-import "../../styles.css";
+import { FC } from 'react';
+import '../../styles.css';
 export interface ToastProps {
     heading: string;
     message: string;
-    status: "success" | "error" | "info" | "warning";
-    position: "topL" | "topR" | "bottomL" | "bottomR";
+    status: 'success' | 'error' | 'info' | 'warning';
+    position: 'topL' | 'topR' | 'bottomL' | 'bottomR';
     onClose: () => void;
     duration: number;
 }

@@ -1,33 +1,28 @@
-import React, { FC } from "react";
-import useStatusDetector from "../../hooks/useStatusDetector";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./Toast.module.css";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import "../../styles.css";
+import React, { FC } from 'react';
+import useStatusDetector from '../../hooks/useStatusDetector';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './Toast.module.css';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import '../../styles.css';
 
 export interface ToastProps {
   heading: string;
   message: string;
-  status: "success" | "error" | "info" | "warning";
-  position: "topL" | "topR" | "bottomL" | "bottomR";
+  status: 'success' | 'error' | 'info' | 'warning';
+  position: 'topL' | 'topR' | 'bottomL' | 'bottomR';
   onClose: () => void;
-  duration: number;
+  duration?: number;
 }
 
-const Toast: FC<ToastProps> = ({
-  heading,
-  message,
-  status,
-  position,
-  onClose,
-  duration,
-}) => {
+const Toast: FC<ToastProps> = ({ heading, message, status, position, onClose, duration }) => {
   const { color, icon } = useStatusDetector(status);
 
-  React.useEffect(() => {
-    setTimeout(() => {}, duration);
-  }, []);
-
+  if (duration) {
+    setTimeout(() => {
+      onClose();
+    }, duration);
+  }
+  
   return (
     <div className={`${styles.wrapper} ${styles[position]}`}>
       <div className={styles.border} style={{ backgroundColor: color }} />
