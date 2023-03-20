@@ -1,28 +1,43 @@
-.toastWrapper {
+.wrapper {
   position: absolute;
   display: flex;
-  bottom: 0;
-  left: '30px';
-  min-width: 350px;
   min-height: 80px;
   border-radius: 8px;
   overflow: hidden;
   box-sizing: border-box;
   background-color: white;
+  margin: 15px;
 }
 
-.toastBorder {
+.topL {
+  top: 0;
+  left: 0;
+}
+.topR {
+  top: 0;
+  right: 0;
+}
+.bottomL {
+  bottom: 0;
+  left: 0;
+}
+.bottomR {
+  bottom: 0;
+  right: 0;
+}
+
+.border {
   min-height: 100%;
   min-width: 15px;
 }
 
-.toastData {
+.data {
   display: flex;
   align-items: center;
   padding: 0 15px;
 }
 
-.toastIcon {
+.icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,13 +50,17 @@
   font-weight: 900;
 }
 
-.toastHeading {
+.heading {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.toastHeading {
+.message {
   color: gray;
   font-size: 15px;
+}
+
+.close {
+  margin: 15px 15px 0 0;
 }
