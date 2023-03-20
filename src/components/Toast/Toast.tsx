@@ -25,9 +25,7 @@ const Toast: FC<ToastProps> = ({
   const { color, icon } = useStatusDetector(status);
 
   React.useEffect(() => {
-    setTimeout(() => {
-      onClose();
-    }, duration);
+    setTimeout(() => {}, duration);
   }, []);
 
   return (
