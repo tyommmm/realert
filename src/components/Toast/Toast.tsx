@@ -10,10 +10,25 @@ export interface ToastProps {
   message: string;
   status: "success" | "error" | "info" | "warning";
   position: "topL" | "topR" | "bottomL" | "bottomR";
+  onClose: () => void;
+  duration: number;
 }
 
-const Toast: FC<ToastProps> = ({ heading, message, status, position }) => {
+const Toast: FC<ToastProps> = ({
+  heading,
+  message,
+  status,
+  position,
+  onClose,
+  duration,
+}) => {
   const { color, icon } = useStatusDetector(status);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      onClose();
+    }, duration);
+  }, []);
 
   return (
     <div className={`${styles.wrapper} ${styles[position]}`}>
@@ -27,7 +42,7 @@ const Toast: FC<ToastProps> = ({ heading, message, status, position }) => {
           <div className={styles.message}>{message}</div>
         </div>
       </div>
-      <div className={styles.close}>
+      <div className={styles.close} onClick={onClose}>
         <FontAwesomeIcon color="gray" fontSize="15px" icon={faXmark} />
       </div>
     </div>
