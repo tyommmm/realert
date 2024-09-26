@@ -1,3 +1,4 @@
 import Alert from "./components/Alert/Alert";
-import './styles'
-export { Alert }
+import Toast from "./components/Toast/Toast";
+
+export { Alert, Toast };

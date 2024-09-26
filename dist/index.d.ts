@@ -1,2 +1,3 @@
-import Alert from "./Alert/Alert";
-export { Alert };
+import Alert from "./components/Alert/Alert";
+import Toast from "./components/Toast/Toast";
+export { Alert, Toast };
